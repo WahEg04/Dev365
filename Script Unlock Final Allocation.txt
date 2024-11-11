@@ -1,0 +1,33 @@
+// Script Untuk unlock Final Allocation
+function main(workbook: ExcelScript.Workbook) {
+  // Pilih sheet yang relevan
+  let sheet = workbook.getActiveWorksheet();
+
+  
+
+  // Pilih range kolom yang ingin dikunci (misalnya, kolom A sampai C)
+  let range = sheet.getRange();
+  let rangetounlock1 = sheet.getRange("G:H");
+  let rangetounlock2 = sheet.getRange("H:I");
+  let rangetounlock3 = sheet.getRange("N:O");
+  let rangetounlock4 = sheet.getRange("O:P");
+  let rangetounlock5 = sheet.getRange("U:V");
+  let rangetounlock6 = sheet.getRange("V:W");
+  
+  // Tentukan password yang ingin digunakan
+  // let password = "dealer123";
+  
+  // Kunci kolom
+  range.getFormat().getProtection().setLocked(true);
+  rangetounlock1.getFormat().getProtection().setLocked(false);
+  rangetounlock2.getFormat().getProtection().setLocked(false);
+  rangetounlock3.getFormat().getProtection().setLocked(false);
+  rangetounlock4.getFormat().getProtection().setLocked(false);
+  rangetounlock5.getFormat().getProtection().setLocked(false);
+  rangetounlock6.getFormat().getProtection().setLocked(false);
+
+  
+  // Pastikan worksheet dilindungi untuk mengaktifkan proteksi sel
+  sheet.getProtection().protect();
+
+}

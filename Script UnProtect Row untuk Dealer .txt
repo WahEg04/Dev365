@@ -1,0 +1,25 @@
+// Script UnProtect Row untuk Dealer Forecast
+
+function main(workbook: ExcelScript.Workbook) {
+  // Pilih sheet yang relevan
+
+
+  let sheet = workbook.getActiveWorksheet();
+
+  // Pilih range kolom yang ingin dikunci (misalnya, kolom A sampai C)
+  let range = sheet.getRange();
+  let range1 = sheet.getRange("B7:E84");
+  let range2 = sheet.getRange("G:H");
+  let range3 = sheet.getRange("J:K");
+
+
+  // Kunci kolom
+  range.getFormat().getProtection().setLocked(true);
+  range1.getFormat().getProtection().setLocked(false);
+  range2.getFormat().getProtection().setLocked(false);
+  range3.getFormat().getProtection().setLocked(false);
+  
+
+  // Pastikan worksheet dilindungi untuk mengaktifkan proteksi sel
+  sheet.getProtection().protect()
+}
